@@ -1,0 +1,26 @@
+﻿USE CostarV2;
+GO
+
+--SELECT * FROM AppointmentService;
+
+SELECT * FROM Documents WHERE OrderDate > '2019-01-01' AND DocumentType = 'RepairOrder';
+
+SELECT * FROM Documents WHERE ReferenceDocument = '07488';
+
+--07488
+
+SELECT 
+	*  
+FROM 
+	DocumentDetails 
+WHERE
+	ServiceDate > '2019-01-01'
+AND (
+	ProductTypeCategory = 'TIRES' 
+OR 
+	Item = 'TMBA' 
+OR 
+	Item = 'TRST' 
+	)
+ORDER BY 
+	Document;

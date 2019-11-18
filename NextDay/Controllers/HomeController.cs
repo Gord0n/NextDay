@@ -22,6 +22,7 @@ namespace NextDay.Controllers
             DocumentTypes docTypes = db.DocumentTypes.FirstOrDefault();
 
 
+
             return View();
         }
 

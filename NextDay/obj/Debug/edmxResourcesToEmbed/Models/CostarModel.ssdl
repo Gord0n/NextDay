@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CostarV2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DocumentDetails">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="DocumentType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Document" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocumentVersion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductTypeCategory" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Memo" Type="varchar" MaxLength="400" />
+    <Property Name="Size" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderQty" Type="real" Nullable="false" />
+    <Property Name="ShipQty" Type="real" Nullable="false" />
+    <Property Name="AdjustedQty" Type="real" Nullable="false" />
+    <Property Name="Discount" Type="real" Nullable="false" />
+    <Property Name="UnitList" Type="money" Nullable="false" />
+    <Property Name="UnitNet" Type="money" Nullable="false" />
+    <Property Name="Taxes" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tax1" Type="money" Nullable="false" />
+    <Property Name="Tax2" Type="money" Nullable="false" />
+    <Property Name="Tax3" Type="money" Nullable="false" />
+    <Property Name="UnitCost" Type="money" Nullable="false" />
+    <Property Name="UnitCostLabor" Type="money" Nullable="false" />
+    <Property Name="ExtendedNet" Type="money" Nullable="false" />
+    <Property Name="ExtendedNetTaxed" Type="money" Nullable="false" />
+    <Property Name="ExtendedCost" Type="money" Nullable="false" />
+    <Property Name="NonStockingFlag" Type="bit" />
+    <Property Name="SerializedFlag" Type="bit" Nullable="false" />
+    <Property Name="TemporaryPriceFlag" Type="bit" />
+    <Property Name="Serviceperson" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceDate" Type="datetime" />
+    <Property Name="ServiceRequired" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="ServicePerformed" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="ServiceHoursActual" Type="real" Nullable="false" />
+    <Property Name="ServiceHoursChargeable" Type="real" Nullable="false" />
+    <Property Name="StockingPoint" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Grouping" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CasingCredit" Type="bit" />
+    <Property Name="CasingGrade" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CasingManufacturer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CasingID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WarrantyFlag" Type="bit" />
+    <Property Name="WarrantyPercentRemaining" Type="smallint" Nullable="false" />
+    <Property Name="WarrantyReplacementCost" Type="money" Nullable="false" />
+    <Property Name="WarrantyCustomer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HeaderRowID" Type="int" />
+    <Property Name="HeaderType" Type="varchar" MaxLength="10" />
+    <Property Name="ReminderServiceCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderRowID" Type="int" Nullable="false" />
+    <Property Name="OrderDetailRowID" Type="int" Nullable="false" />
+    <Property Name="OvertimeFactor" Type="real" Nullable="false" />
+    <Property Name="Completed" Type="bit" Nullable="false" />
+    <Property Name="PODetailRowID" Type="int" Nullable="false" />
+    <Property Name="Supplier" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepositProcessed" Type="bit" Nullable="false" />
+    <Property Name="RowID" Type="int" Nullable="false" />
+    <Property Name="TranslatedDescription" Type="varchar" MaxLength="300" />
+    <Property Name="TranslatedServicePerformed" Type="varchar" MaxLength="300" />
+    <Property Name="WarrantyCode" Type="varchar" MaxLength="50" />
+    <Property Name="ItemGLAccount" Type="varchar" MaxLength="50" />
+    <Property Name="Reference" Type="varchar" MaxLength="50" />
+    <Property Name="CasingToInventory" Type="bit" />
+    <Property Name="LineItemNumber" Type="int" />
+    <Property Name="DiscountPlan1" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan1Percentage" Type="real" />
+    <Property Name="DiscountPlan1Method" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan1Amount" Type="money" />
+    <Property Name="DiscountPlan2" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan2Percentage" Type="real" />
+    <Property Name="DiscountPlan2Method" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan2Amount" Type="money" />
+    <Property Name="DiscountPlan3" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan3Percentage" Type="real" />
+    <Property Name="DiscountPlan3Method" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan3Amount" Type="money" />
+    <Property Name="RebillTo" Type="varchar" MaxLength="50" />
+    <Property Name="CreditRowID" Type="int" />
+    <Property Name="FollowupRun" Type="int" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="50" />
+    <Property Name="UnitMeasure" Type="varchar" MaxLength="50" />
+    <Property Name="Inactive" Type="bit" />
+    <Property Name="DetailCreditReason" Type="varchar" MaxLength="50" />
+    <Property Name="PriceSource" Type="varchar" MaxLength="50" />
+    <Property Name="FixedPrice" Type="bit" />
+    <Property Name="FixedQty" Type="bit" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="50" />
+    <Property Name="SupplierItem" Type="varchar" MaxLength="50" />
+    <Property Name="WarrantyReason" Type="varchar" MaxLength="50" />
+    <Property Name="RefusalReason" Type="varchar" MaxLength="50" />
+    <Property Name="ActivantCategoryNumber" Type="int" />
+    <Property Name="ActivantGroupNumber" Type="int" />
+    <Property Name="ActivantOperation" Type="int" />
+    <Property Name="ActivantOperationTail" Type="int" />
+    <Property Name="SaleBegins" Type="datetime" />
+    <Property Name="SaleEnds" Type="datetime" />
+    <Property Name="ServicePerson2" Type="varchar" MaxLength="50" />
+    <Property Name="ServicePerson3" Type="varchar" MaxLength="50" />
+    <Property Name="ServicePerson4" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceDate2" Type="datetime" />
+    <Property Name="ServiceDate3" Type="datetime" />
+    <Property Name="ServiceDate4" Type="datetime" />
+    <Property Name="ServiceHoursActual2" Type="real" />
+    <Property Name="ServiceHoursActual3" Type="real" />
+    <Property Name="ServiceHoursActual4" Type="real" />
+    <Property Name="RowGUID" Type="uniqueidentifier" />
+    <Property Name="AuthorizationRowGUID" Type="uniqueidentifier" />
+    <Property Name="MaximumQty" Type="real" />
+    <Property Name="ActivantPartDescription" Type="varchar" MaxLength="200" />
+    <Property Name="PromotionCode" Type="varchar" MaxLength="50" />
+    <Property Name="PromotionDescription" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalUnitList" Type="money" />
+    <Property Name="LaborCategory" Type="varchar" MaxLength="50" />
+    <Property Name="LaborSubcategory" Type="varchar" MaxLength="50" />
+    <Property Name="OriginalUnitNet" Type="money" />
+    <Property Name="Min_UnitNet" Type="money" />
+    <Property Name="CopiedFromRowID" Type="int" />
+    <Property Name="AddedFromRowID" Type="int" />
+    <Property Name="HoldForDelivery" Type="bit" />
+    <Property Name="SupplierLocation" Type="varchar" MaxLength="255" />
+    <Property Name="AllocatedHours" Type="decimal" Precision="14" Scale="4" />
+    <Property Name="ComebackType" Type="varchar" MaxLength="50" />
+    <Property Name="NextReminderInWeeks" Type="int" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="DocumentType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Document" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocumentVersion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Wholesale" Type="bit" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="PO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Salesperson" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SalespersonOfRecord" Type="varchar" MaxLength="50" />
+    <Property Name="Branch" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Customer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Province" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BusPhone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="OldVehicleNumber" Type="int" Nullable="false" />
+    <Property Name="Odometer" Type="real" Nullable="false" />
+    <Property Name="ShipCustomer" Type="varchar" MaxLength="50" />
+    <Property Name="ShipName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipAddress1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipAddress2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipCity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipPostal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipProvince" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipVia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipInstructions" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipPhone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipFax" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipContact" Type="varchar" MaxLength="50" />
+    <Property Name="ShipTerms" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TaxStateProvince" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GLAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Terms" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Invoiced" Type="bit" />
+    <Property Name="CashierRequired" Type="bit" />
+    <Property Name="Cashiered" Type="bit" />
+    <Property Name="Cashier" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CashierTime" Type="datetime" />
+    <Property Name="Payment1" Type="money" Nullable="false" />
+    <Property Name="Payment1Method" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment1Memo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment2" Type="money" Nullable="false" />
+    <Property Name="Payment2Method" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment2Memo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment3" Type="money" Nullable="false" />
+    <Property Name="Payment3Method" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment3Memo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment4" Type="money" Nullable="false" />
+    <Property Name="Payment4Method" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Payment4Memo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BatchType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BatchNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="InventoryYear" Type="smallint" Nullable="false" />
+    <Property Name="InventoryMonth" Type="smallint" Nullable="false" />
+    <Property Name="CheckedOutBy" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AppointmentTime" Type="datetime" />
+    <Property Name="PromisedTime" Type="datetime" />
+    <Property Name="Reference" Type="varchar" MaxLength="50" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="Comment" Type="varchar" MaxLength="50" />
+    <Property Name="CashCustomer" Type="bit" Nullable="false" />
+    <Property Name="AppointmentFlag" Type="bit" Nullable="false" />
+    <Property Name="CompletedFlag" Type="bit" Nullable="false" />
+    <Property Name="CloseDate" Type="datetime" />
+    <Property Name="OrderRowID" Type="int" Nullable="false" />
+    <Property Name="StylesPrinted" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="RelieveBranch" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AppointmentDate" Type="datetime" />
+    <Property Name="Division" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RebillCustomer" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RebillReference" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="VehicleTag" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Language" Type="varchar" MaxLength="10" />
+    <Property Name="RowID" Type="int" Nullable="false" />
+    <Property Name="AppointmentType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PolledDate" Type="datetime" />
+    <Property Name="RoyaltyRun" Type="int" />
+    <Property Name="ReceiptDate" Type="datetime" />
+    <Property Name="OdometerOut" Type="int" />
+    <Property Name="Payment1Memo2" Type="varchar" MaxLength="50" />
+    <Property Name="Payment2Memo2" Type="varchar" MaxLength="50" />
+    <Property Name="Payment3Memo2" Type="varchar" MaxLength="50" />
+    <Property Name="Payment4Memo2" Type="varchar" MaxLength="50" />
+    <Property Name="WaitingFlag" Type="bit" Nullable="false" />
+    <Property Name="RebillDocument" Type="varchar" MaxLength="50" />
+    <Property Name="StoreID" Type="varchar" MaxLength="50" />
+    <Property Name="RebillDate" Type="datetime" />
+    <Property Name="ReferenceDocumentType" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceDocument" Type="varchar" MaxLength="50" />
+    <Property Name="ReferenceStoreID" Type="varchar" MaxLength="50" />
+    <Property Name="SPOCRequestType" Type="varchar" MaxLength="50" />
+    <Property Name="POTrackingNumber" Type="varchar" MaxLength="50" />
+    <Property Name="InterCompanyAccount" Type="bit" />
+    <Property Name="DiscountPlan1" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan1Percentage" Type="real" />
+    <Property Name="DiscountPlan1Method" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan1Amount" Type="money" />
+    <Property Name="DiscountPlan2" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan2Percentage" Type="real" />
+    <Property Name="DiscountPlan2Method" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan2Amount" Type="money" />
+    <Property Name="DiscountPlan3" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan3Percentage" Type="real" />
+    <Property Name="DiscountPlan3Method" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountPlan3Amount" Type="money" />
+    <Property Name="SPOCEmployee" Type="varchar" MaxLength="50" />
+    <Property Name="FillNumber" Type="smallint" />
+    <Property Name="Alerted" Type="bit" />
+    <Property Name="FollowupRun" Type="int" />
+    <Property Name="Appointment" Type="varchar" MaxLength="50" />
+    <Property Name="Tag" Type="varchar" MaxLength="50" />
+    <Property Name="ConfirmedFlag" Type="bit" Nullable="false" />
+    <Property Name="Sender" Type="varchar" MaxLength="200" />
+    <Property Name="Source" Type="varchar" MaxLength="200" />
+    <Property Name="ImportRun" Type="int" />
+    <Property Name="Selected" Type="int" />
+    <Property Name="Valid" Type="bit" />
+    <Property Name="DocumentSubtype" Type="varchar" MaxLength="50" />
+    <Property Name="InvoiceSent" Type="bit" />
+    <Property Name="InvoiceSentAs" Type="varchar" MaxLength="250" />
+    <Property Name="VehicleNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RebilledFromBatchType" Type="varchar" MaxLength="50" />
+    <Property Name="RebilledFromBatchNumber" Type="varchar" MaxLength="50" />
+    <Property Name="RebilledFromSupplier" Type="varchar" MaxLength="50" />
+    <Property Name="ContractActive" Type="bit" />
+    <Property Name="ContractBillingType" Type="varchar" MaxLength="50" />
+    <Property Name="ContractBillingPeriods" Type="int" />
+    <Property Name="ContractAdvanceBilling" Type="bit" />
+    <Property Name="ContractDriverCode" Type="varchar" MaxLength="50" />
+    <Property Name="ContractEFT" Type="bit" />
+    <Property Name="ContractEMail" Type="bit" />
+    <Property Name="WebOrder" Type="bit" />
+    <Property Name="ProductGM" Type="real" />
+    <Property Name="LabourGM" Type="real" />
+    <Property Name="Inactive" Type="bit" />
+    <Property Name="CreditReason" Type="varchar" MaxLength="50" />
+    <Property Name="Revision" Type="int" />
+    <Property Name="DeliveryAdvice" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovalDocumentType" Type="varchar" MaxLength="50" />
+    <Property Name="ApprovalDocument" Type="varchar" MaxLength="50" />
+    <Property Name="TaxFree" Type="bit" />
+    <Property Name="PickStatus" Type="varchar" MaxLength="50" />
+    <Property Name="OrderPriority" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryRoute" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryStopSequence" Type="varchar" MaxLength="50" />
+    <Property Name="LocationPickPlanGUID" Type="varchar" MaxLength="50" />
+    <Property Name="BuyingGroup" Type="varchar" MaxLength="50" />
+    <Property Name="IsBookingOrder" Type="bit" Nullable="false" />
+    <Property Name="OdometerAuth" Type="int" />
+    <Property Name="CorporatelyControlled" Type="bit" />
+    <Property Name="CalledFlag" Type="bit" />
+    <Property Name="ArrivedFlag" Type="bit" />
+    <Property Name="DeliveryMethod" Type="varchar" MaxLength="50" />
+    <Property Name="InShop" Type="bit" />
+    <Property Name="AuthorizationRequired" Type="bit" />
+    <Property Name="EstimateComplete" Type="bit" />
+    <Property Name="PartsRequired" Type="bit" />
+    <Property Name="PartsOrdered" Type="bit" />
+    <Property Name="PartsReceived" Type="bit" />
+    <Property Name="UnallocatedParts" Type="bit" />
+    <Property Name="PackagePrice" Type="money" />
+    <Property Name="AllowPriceChange" Type="bit" />
+    <Property Name="PackageGroupGUID" Type="uniqueidentifier" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="50" />
+    <Property Name="EMail" Type="varchar" MaxLength="50" />
+    <Property Name="CTCBusinessUnit" Type="varchar" MaxLength="50" />
+    <Property Name="CTCBusinessTypeCode" Type="varchar" MaxLength="50" />
+    <Property Name="CTCBusinessCode" Type="varchar" MaxLength="50" />
+    <Property Name="Reminded" Type="bit" />
+    <Property Name="CTCSaveAmount" Type="money" />
+    <Property Name="IsDynamicPackage" Type="bit" />
+    <Property Name="ShipBusPhone" Type="varchar" MaxLength="50" />
+    <Property Name="ShipEmail" Type="varchar" MaxLength="50" />
+    <Property Name="ShipMobilePhone" Type="varchar" MaxLength="50" />
+    <Property Name="Payment1Memo3" Type="varchar" MaxLength="50" />
+    <Property Name="Payment2Memo3" Type="varchar" MaxLength="50" />
+    <Property Name="Payment3Memo3" Type="varchar" MaxLength="50" />
+    <Property Name="Payment4Memo3" Type="varchar" MaxLength="50" />
+    <Property Name="IsBeingTendered" Type="bit" />
+    <Property Name="HideFromSearch" Type="bit" />
+    <Property Name="RowGuid" Type="uniqueidentifier" />
+    <Property Name="CostarId" Type="varchar(max)" />
+    <Property Name="ExternalReference1" Type="varchar" MaxLength="255" />
+    <Property Name="IsWebAppointment" Type="bit" />
+    <Property Name="IsPlannedOrder" Type="bit" />
+    <Property Name="IsInvoiceSigned" Type="bit" />
+    <Property Name="VehicleYear" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleModel" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleLicence" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleVIN" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleUnit" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleEngine" Type="varchar" MaxLength="255" />
+    <Property Name="VehicleColor" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleDrive" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleTransmission" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleFuel" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleIgnition" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleAccessories" Type="varchar(max)" />
+    <Property Name="FullTextSearch" Type="varchar(max)" />
+    <Property Name="SupplierTerms" Type="varchar" MaxLength="50" />
+    <Property Name="PrimaryTechnician" Type="varchar" MaxLength="50" />
+    <Property Name="IsLockPurchaseOrder" Type="bit" />
+    <Property Name="IsCustomerOrVehicleChanged" Type="bit" />
+    <Property Name="Origin" Type="varchar" MaxLength="50" />
+    <Property Name="StrippedMobilePhone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DocumentTypes">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Caption" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CashierRequired" Type="bit" />
+    <Property Name="InventoryDirection" Type="real" Nullable="false" />
+    <Property Name="AccountingSign" Type="real" Nullable="false" />
+    <Property Name="UpdateSalesHistory" Type="bit" />
+    <Property Name="Comments" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerRequired" Type="bit" Nullable="false" />
+    <Property Name="CashCustomerAllowed" Type="bit" Nullable="false" />
+    <Property Name="Styles" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="StyleDefaults" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="TranslatedCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowVehicle" Type="bit" Nullable="false" />
+    <Property Name="AllowLabor" Type="bit" Nullable="false" />
+    <Property Name="AllowNegativeQtys" Type="bit" Nullable="false" />
+    <Property Name="CheckStockButton" Type="bit" Nullable="false" />
+    <Property Name="IsPricedAtCost" Type="bit" Nullable="false" />
+    <Property Name="PickButton" Type="bit" Nullable="false" />
+    <Property Name="SwitchToCustomerBranch" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CostarV2ModelStoreContainer">
+    <EntitySet Name="DocumentDetails" EntityType="Self.DocumentDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentTypes" EntityType="Self.DocumentTypes" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

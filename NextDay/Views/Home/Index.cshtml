@@ -1,1 +1,39 @@
-﻿
+﻿@model List<NextDay.Models.Objects.NextDayInformation>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1>@DateTime.Today.ToLongDateString() - @DateTime.Today.AddDays(7).ToLongDateString()</h1> <!--Temp stuff change to actual date-->
+                </div>
+                <div class="panel-body">
+                    @{
+                        DateTime prevDate = new DateTime(1992, 03, 27);
+                    }
+                    <div class="row">
+                        @foreach (NextDay.Models.Objects.NextDayInformation Info in Model)
+                        {
+                            if (Info.DocumentDate != prevDate && Info.DocumentDate != null)
+                            {
+                                <div class="col-xs-12">
+                                    <h1>@Info.DocumentDate.ToLongDateString()</h1>
+                                </div>
+                                prevDate = Info.DocumentDate;
+                            }
+                            <div class="col-xs-12" style="border-bottom: 1px solid black; margin-bottom: 5px;">
+                                <p>@Info.DocumentType - @Info.CustomerInformation - @Info.CustomerVehicleInformation</p>
+                                @for (int i = 0; i < Info.DocumentInformation.Count; i++)
+                                {
+                                    <p>
+                                        @Info.DocumentInformation[i]
+                                    </p>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

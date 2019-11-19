@@ -156,6 +156,8 @@
     <Compile Include="Models\DocumentTypes.cs">
       <DependentUpon>CostarModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Objects\NextDayInformation.cs" />
+    <Compile Include="Models\ViewModels\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,8 @@ SELECT * FROM Documents WHERE ReferenceDocument = '07488';
 
 --07488
 
+SELECT * FROM DocumentDetails WHERE ServiceDate > '2019-01-01' ORDER BY ServiceDate;
+
 SELECT 
 	*  
 FROM 

@@ -26,3 +26,23 @@ OR
 	)
 ORDER BY 
 	Document;
+
+	USE CostarV2; 
+
+SELECT * FROM [Documents] WHERE OrderDate > '2019-11-11';
+
+SELECT * FROM [DocumentDetails] WHERE ServiceDate > '2019-11-11';
+
+SELECT * FROM [Documents] WHERE InvoiceDate > '2019-11-26' AND InvoiceDate < '2019-12-03' ORDER BY Document;
+
+SELECT
+	*
+FROM
+	[DocumentDetails]
+WHERE
+	[Document] 
+IN
+	(SELECT [Document] FROM [Documents] WHERE (InvoiceDate > '2019-11-26' AND InvoiceDate < '2019-12-03' ));
+
+
+SELECT * FROM [DocumentDetails]

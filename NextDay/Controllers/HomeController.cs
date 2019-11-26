@@ -22,17 +22,17 @@ namespace NextDay.Controllers
             List<Documents> docs = db.Documents.Where(o => o.InvoiceDate > today && o.InvoiceDate < nextWeek).OrderBy(o => o.Document).OrderBy(o => o.AppointmentDate).ToList();
             //List<DocumentDetails> docDetails = db.DocumentDetails.Where(o=>(o.ServiceDate > tempTime && o.ServiceDate < nextWeek) && (o.ProductTypeCategory == "TIRES" || o.Item == "TRST") && (o.DocumentType == "Appointment" || o.DocumentType == "RepairOrder" || o.DocumentType == "PO")).OrderBy(o=>o.Document).OrderBy(o=>o.ServiceDate).ToList();
 
-            //This one works gooder
-            List<DocumentDetails> docDetails = db.DocumentDetails.Where(o => (o.ServiceDate > today && o.ServiceDate < nextWeek) && (o.ProductTypeCategory == "TIRES" || o.Item == "TRST")).OrderBy(o => o.Document).OrderBy(o => o.ServiceDate).ToList();
 
+            //List<DocumentDetails> docDetails = db.DocumentDetails.Where(o => (o.ServiceDate > today && o.ServiceDate < nextWeek) && (o.ProductTypeCategory == "TIRES" || o.Item == "TRST")).OrderBy(o => o.Document).OrderBy(o => o.ServiceDate).ToList();
+            List<DocumentDetails> docDetails = new List<DocumentDetails>();
 
-            /*
-            var seleceted = from u in db.DocumentDetails
-                            where docs.Select(o => o.Document).Contains(u.Document)
-                            select u;
-            */              
+            foreach (Documents doc in docs)
+            {
+                List<DocumentDetails> tempDocDetails = db.DocumentDetails.Where(o => o.Document == doc.Document).ToList();
 
-            //List<DocumentDetails> docDetails = db.DocumentDetails.Where(o => docs.Select(u => u.Document).Contains(o.Document)).ToList();
+                string tempString = "STOP HERE TO DEBUF LOL L2 CODE NEWB";
+
+            }
 
             List < NextDayInformation > content = new List<NextDayInformation>();
             string prevDocument = "";

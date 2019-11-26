@@ -17,13 +17,24 @@ namespace NextDay.Controllers
         {
             DateTime today = DateTime.Today;
             DateTime tempTime = new DateTime(2019, 01, 01);
-            DateTime nextWeek = tempTime.AddDays(7);
+            DateTime nextWeek = today.AddDays(7);
 
-            List<Documents> docs = db.Documents.Where(o => o.OrderDate > tempTime && o.OrderDate < today).OrderBy(o => o.Document).OrderBy(o => o.AppointmentDate).ToList();
+            List<Documents> docs = db.Documents.Where(o => o.InvoiceDate > today && o.InvoiceDate < nextWeek).OrderBy(o => o.Document).OrderBy(o => o.AppointmentDate).ToList();
             //List<DocumentDetails> docDetails = db.DocumentDetails.Where(o=>(o.ServiceDate > tempTime && o.ServiceDate < nextWeek) && (o.ProductTypeCategory == "TIRES" || o.Item == "TRST") && (o.DocumentType == "Appointment" || o.DocumentType == "RepairOrder" || o.DocumentType == "PO")).OrderBy(o=>o.Document).OrderBy(o=>o.ServiceDate).ToList();
-            List<DocumentDetails> docDetails = db.DocumentDetails.Where(o => (o.ServiceDate > tempTime && o.ServiceDate < nextWeek) && (o.ProductTypeCategory == "TIRES" || o.Item == "TRST")).OrderBy(o => o.Document).OrderBy(o => o.ServiceDate).ToList();
 
-            List<NextDayInformation> content = new List<NextDayInformation>();
+            //This one works gooder
+            List<DocumentDetails> docDetails = db.DocumentDetails.Where(o => (o.ServiceDate > today && o.ServiceDate < nextWeek) && (o.ProductTypeCategory == "TIRES" || o.Item == "TRST")).OrderBy(o => o.Document).OrderBy(o => o.ServiceDate).ToList();
+
+
+            /*
+            var seleceted = from u in db.DocumentDetails
+                            where docs.Select(o => o.Document).Contains(u.Document)
+                            select u;
+            */              
+
+            //List<DocumentDetails> docDetails = db.DocumentDetails.Where(o => docs.Select(u => u.Document).Contains(o.Document)).ToList();
+
+            List < NextDayInformation > content = new List<NextDayInformation>();
             string prevDocument = "";
 
             foreach(DocumentDetails Details in docDetails)
